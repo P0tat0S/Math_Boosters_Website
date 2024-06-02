@@ -5,41 +5,61 @@ import Card from '@mui/material/Card';
 import { Chip as MuiChip } from '@mui/material';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
 import { styled } from '@mui/material/styles';
 
-import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
-import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
-import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
-import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
+import Filter1Icon from '@mui/icons-material/Filter1';
+import FunctionsIcon from '@mui/icons-material/Functions';
+import AspectRatioIcon from '@mui/icons-material/AspectRatio';
+import GridOnIcon from '@mui/icons-material/GridOn';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import SchoolIcon from '@mui/icons-material/School';
 
 const items = [
   {
-    icon: <ViewQuiltRoundedIcon />,
-    title: 'Dashboard',
+    icon: <Filter1Icon />,
+    title: 'Number',
     description:
-      'This item could provide a snapshot of the most important metrics or data points related to the product.',
-    imageLight: 'url("/static/images/templates/templates-images/dash-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
+      'This includes operations with numbers, fractions, decimals, percentages, powers, roots, and the use of standard form and significant figures.',
   },
   {
-    icon: <EdgesensorHighRoundedIcon />,
-    title: 'Mobile integration',
+    icon: <FunctionsIcon />,
+    title: 'Algebra',
     description:
-      'This item could provide information about the mobile app version of the product.',
-    imageLight: 'url("/static/images/templates/templates-images/mobile-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/mobile-dark.png")',
+      'Topics cover expressions, equations, inequalities, sequences, and graphing functions, including linear, quadratic, and other polynomial functions, as well as exponential and trigonometric functions.',
   },
   {
-    icon: <DevicesRoundedIcon />,
-    title: 'Available on all platforms',
+    icon: <AspectRatioIcon />,
+    title: 'Ratio',
     description:
-      'This item could let users know the product is available on all platforms, such as web, mobile, and desktop.',
-    imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
+      'This includes working with ratios, proportional reasoning to solve problems, and understanding rates of change in various contexts.',
+  },
+  {
+    icon: <GridOnIcon />,
+    title: 'Geometry and Measures',
+    description:
+      'Students learn about angles, shapes, coordinates, area, volume, and the properties of circles. It also includes transformations and constructions.',
+  },
+  {
+    icon: <ShowChartIcon />,
+    title: 'Probability and Statistics',
+    description:
+      'This covers data collection, data presentation and analysis, averages, range, probability theories, and using these to solve problems.',
+  },
+  {
+    icon: <LightbulbIcon />,
+    title: 'Problem Solving',
+    description:
+      'Throughout the course, there is a strong emphasis on applying mathematical reasoning, making connections between topics, and solving complex problems.',
+  },
+  {
+    icon: <SchoolIcon />,
+    title: 'Functional Mathematics',
+    description:
+      'This involves using mathematics in practical and real-world contexts, often integrated within the other topic areas.',
   },
 ];
 
@@ -68,23 +88,21 @@ export default function Features() {
   const selectedFeature = items[selectedItemIndex];
 
   return (
-    <Container id="features" sx={{ py: { xs: 8, sm: 16 } }}>
+    <Container id="features" sx={{ py: { xs: 8, sm: 4 } }}>
       <Grid container spacing={6}>
-        <Grid item xs={12} md={6}>
-          <div>
-            <Typography component="h2" variant="h4" color="text.primary">
-              Product features
+        <Grid item xs={12} md={12}>
+          <Box>
+            <Typography component="h2" variant="h4" color="text.primary" sx={{ mb: 2 }}>
+              Teaching Contents
             </Typography>
             <Typography
               variant="body1"
               color="text.secondary"
               sx={{ mb: { xs: 2, sm: 4 } }}
             >
-              Provide a brief overview of the key features of the product. For
-              example, you could list the number of features, their types or
-              benefits, and add-ons.
+              The teaching content of an online Maths GCSE course in the UK typically covers the national curriculum set out for Key Stage 4, targeting students in Year 10 and Year 11. The curriculum is designed to prepare students for their GCSE examinations and usually includes the following areas:
             </Typography>
-          </div>
+          </Box>
           <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>
             {items.map(({ title }, index) => (
               <Chip
@@ -92,6 +110,7 @@ export default function Features() {
                 label={title}
                 onClick={() => handleItemClick(index)}
                 selected={selectedItemIndex === index}
+                sx={{ textTransform: 'none' }}
               />
             ))}
           </Grid>
@@ -102,17 +121,6 @@ export default function Features() {
               mt: 4,
             }}
           >
-            <Box
-              sx={{
-                backgroundImage: (theme) =>
-                  theme.palette.mode === 'light'
-                    ? items[selectedItemIndex].imageLight
-                    : items[selectedItemIndex].imageDark,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                minHeight: 280,
-              }}
-            />
             <Box sx={{ px: 2, pb: 2 }}>
               <Typography color="text.primary" fontWeight="medium" gutterBottom>
                 {selectedFeature.title}
@@ -120,23 +128,6 @@ export default function Features() {
               <Typography color="text.secondary" variant="body2" sx={{ mb: 1.5 }}>
                 {selectedFeature.description}
               </Typography>
-              <Link
-                color="primary"
-                variant="body2"
-                fontWeight="bold"
-                sx={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  '& > svg': { transition: '0.2s' },
-                  '&:hover > svg': { transform: 'translateX(2px)' },
-                }}
-              >
-                <span>Learn more</span>
-                <ChevronRightRoundedIcon
-                  fontSize="small"
-                  sx={{ mt: '1px', ml: '2px' }}
-                />
-              </Link>
             </Box>
           </Card>
           <Stack
@@ -212,64 +203,17 @@ export default function Features() {
                     <Typography
                       color="text.secondary"
                       variant="body2"
-                      sx={{ mb: 1.5 }}
+                      sx={{ mb: 1.5,
+                            textTransform: 'none'
+                      }}
                     >
                       {description}
                     </Typography>
-                    <Link
-                      color="primary"
-                      variant="body2"
-                      fontWeight="bold"
-                      sx={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        '& > svg': { transition: '0.2s' },
-                        '&:hover > svg': { transform: 'translateX(2px)' },
-                      }}
-                      onClick={(event) => {
-                        event.stopPropagation();
-                      }}
-                    >
-                      <span>Learn more</span>
-                      <ChevronRightRoundedIcon
-                        fontSize="small"
-                        sx={{ mt: '1px', ml: '2px' }}
-                      />
-                    </Link>
                   </div>
                 </Box>
               </Card>
             ))}
           </Stack>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          md={6}
-          sx={{ display: { xs: 'none', sm: 'flex' }, width: '100%' }}
-        >
-          <Card
-            variant="outlined"
-            sx={{
-              height: '100%',
-              width: '100%',
-              display: { xs: 'none', sm: 'flex' },
-              pointerEvents: 'none',
-            }}
-          >
-            <Box
-              sx={{
-                m: 'auto',
-                width: 420,
-                height: 500,
-                backgroundSize: 'contain',
-                backgroundImage: (theme) =>
-                  theme.palette.mode === 'light'
-                    ? items[selectedItemIndex].imageLight
-                    : items[selectedItemIndex].imageDark,
-              }}
-            />
-          </Card>
         </Grid>
       </Grid>
     </Container>

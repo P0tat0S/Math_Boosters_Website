@@ -5,49 +5,49 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
-import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
-import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
-import SettingsSuggestRoundedIcon from '@mui/icons-material/SettingsSuggestRounded';
-import SupportAgentRoundedIcon from '@mui/icons-material/SupportAgentRounded';
-import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
+import VideoCallIcon from '@mui/icons-material/VideoCall';
+import SchoolIcon from '@mui/icons-material/School';
+import GroupIcon from '@mui/icons-material/Group';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import FeedbackIcon from '@mui/icons-material/Feedback';
 
 const items = [
   {
-    icon: <SettingsSuggestRoundedIcon />,
-    title: 'Adaptable performance',
+    icon: <VideoCallIcon />,
+    title: 'Adaptable Learning',
     description:
-      'Our product effortlessly adjusts to your needs, boosting efficiency and simplifying your tasks.',
+      'Our online classes adjust to your pace, enhancing comprehension and retention.',
   },
   {
-    icon: <ConstructionRoundedIcon />,
-    title: 'Built to last',
+    icon: <SchoolIcon />,
+    title: 'Quality Instruction',
     description:
-      'Experience unmatched durability that goes above and beyond with lasting investment.',
+      'Our classes are designed and conducted by experienced educators, ensuring a solid foundation.',
   },
   {
-    icon: <ThumbUpAltRoundedIcon />,
-    title: 'Great user experience',
+    icon: <GroupIcon />,
+    title: 'Interactive Sessions',
     description:
-      'Integrate our product into your routine with an intuitive and easy-to-use interface.',
+      'Our video calls allow for real-time interaction, making learning more engaging and effective.',
   },
   {
-    icon: <AutoFixHighRoundedIcon />,
-    title: 'Innovative functionality',
+    icon: <LightbulbIcon />,
+    title: 'Innovative Teaching Techniques',
     description:
-      'Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
+      'We employ modern teaching methods that cater to different learning styles.',
   },
   {
-    icon: <SupportAgentRoundedIcon />,
-    title: 'Reliable support',
+    icon: <ContactSupportIcon />,
+    title: 'Dedicated Support',
     description:
-      'Count on our responsive customer support, offering assistance that goes beyond the purchase.',
+      'Our support team is always ready to assist with any technical issues or academic queries.',
   },
   {
-    icon: <QueryStatsRoundedIcon />,
-    title: 'Precision in every detail',
+    icon: <FeedbackIcon />,
+    title: 'Personalized Feedback',
     description:
-      'Enjoy a meticulously crafted product where small touches make a significant impact on your overall experience.',
+      'Receive detailed feedback on your progress to help you improve and succeed.',
   },
 ];
 

@@ -15,40 +15,38 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
 const tiers = [
   {
-    title: 'Free',
-    price: '0',
+    title: 'Individual',
+    price: '30',
+    period: 'per hour',
     description: [
-      '10 users included',
-      '2 GB of storage',
-      'Help center access',
-      'Email support',
+      'One hour session',
+      'Flexible schedule',
     ],
-    buttonText: 'Sign up for free',
+    buttonText: 'Book now',
     buttonVariant: 'outlined',
   },
   {
-    title: 'Professional',
+    title: '12 Week Program',
     subheader: 'Recommended',
-    price: '15',
+    price: '480',
+    period: 'total',
     description: [
-      '20 users included',
-      '10 GB of storage',
-      'Help center access',
-      'Priority email support',
-      'Dedicated team',
-      'Best deals',
+      'Group sessions',
+      'Friday and Saturday from 5pm-6pm',
+      'Or Wednesday and Thursday 5:00-6:pm',
+      'Or Saturdays 3pm-5pm',
     ],
     buttonText: 'Start now',
     buttonVariant: 'contained',
   },
   {
-    title: 'Enterprise',
-    price: '30',
+    title: 'Group of Five',
+    price: '20',
+    period: 'per hour',
     description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
-      'Phone & email support',
+      'Per student',
+      'Ideal for study groups',
+      'Flexible schedule',
     ],
     buttonText: 'Contact us',
     buttonVariant: 'outlined',
@@ -77,12 +75,6 @@ export default function Pricing() {
       >
         <Typography component="h2" variant="h4" color="text.primary">
           Pricing
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Quickly build an effective pricing table for your potential customers with
-          this layout. <br />
-          It&apos;s built with default Material UI components with little
-          customization.
         </Typography>
       </Box>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
@@ -151,10 +143,10 @@ export default function Pricing() {
                   }}
                 >
                   <Typography component="h3" variant="h2">
-                    ${tier.price}
+                    £{tier.price}
                   </Typography>
                   <Typography component="h3" variant="h6">
-                    &nbsp; per month
+                    &nbsp; {tier.period}
                   </Typography>
                 </Box>
                 <Divider

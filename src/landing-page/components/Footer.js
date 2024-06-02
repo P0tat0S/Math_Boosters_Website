@@ -15,13 +15,13 @@ import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
 
-import SitemarkIcon from './SitemarkIcon';
+import SitemarkIcon from './MathBoostersIcon';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
       {'Copyright © '}
-      <Link href="https://mui.com/">Sitemark&nbsp;</Link>
+      <Link href="https://math-boosters.com/">Math Boosters&nbsp;</Link>
       {new Date().getFullYear()}
     </Typography>
   );
@@ -47,47 +47,7 @@ export default function Footer() {
           justifyContent: 'space-between',
         }}
       >
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 4,
-            minWidth: { xs: '100%', sm: '60%' },
-          }}
-        >
-          <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
-            <SitemarkIcon />
-            <Typography variant="body2" fontWeight={600} gutterBottom sx={{ mt: 2 }}>
-              Join the newsletter
-            </Typography>
-            <Typography variant="body2" color="text.secondary" mb={2}>
-              Subscribe for weekly updates. No spams ever!
-            </Typography>
-            <Stack direction="row" spacing={1} useFlexGap>
-              <InputLabel htmlFor="email-newsletter" sx={visuallyHidden}>
-                Email
-              </InputLabel>
-              <TextField
-                id="email-newsletter"
-                hiddenLabel
-                size="small"
-                variant="outlined"
-                fullWidth
-                aria-label="Enter your email address"
-                placeholder="Your email address"
-                slotProps={{
-                  htmlInput: {
-                    autoComplete: 'off',
-                    'aria-label': 'Enter your email address',
-                  },
-                }}
-              />
-              <Button variant="contained" color="primary" sx={{ flexShrink: 0 }}>
-                Subscribe
-              </Button>
-            </Stack>
-          </Box>
-        </Box>
+        <SitemarkIcon />
         <Box
           sx={{
             display: { xs: 'none', sm: 'flex' },
@@ -96,17 +56,8 @@ export default function Footer() {
           }}
         >
           <Typography variant="body2" fontWeight="medium">
-            Product
+            Overview
           </Typography>
-          <Link color="text.secondary" variant="body2" href="#">
-            Features
-          </Link>
-          <Link color="text.secondary" variant="body2" href="#">
-            Testimonials
-          </Link>
-          <Link color="text.secondary" variant="body2" href="#">
-            Highlights
-          </Link>
           <Link color="text.secondary" variant="body2" href="#">
             Pricing
           </Link>
@@ -128,10 +79,7 @@ export default function Footer() {
             About us
           </Link>
           <Link color="text.secondary" variant="body2" href="#">
-            Careers
-          </Link>
-          <Link color="text.secondary" variant="body2" href="#">
-            Press
+            Contact
           </Link>
         </Box>
         <Box
@@ -149,9 +97,6 @@ export default function Footer() {
           </Link>
           <Link color="text.secondary" variant="body2" href="#">
             Privacy
-          </Link>
-          <Link color="text.secondary" variant="body2" href="#">
-            Contact
           </Link>
         </Box>
       </Box>
@@ -177,40 +122,6 @@ export default function Footer() {
           </Link>
           <Copyright />
         </div>
-        <Stack
-          direction="row"
-          justifyContent="left"
-          spacing={1}
-          useFlexGap
-          sx={{
-            color: 'text.secondary',
-          }}
-        >
-          <IconButton
-            color="inherit"
-            href="https://github.com/mui"
-            aria-label="GitHub"
-            sx={{ alignSelf: 'center' }}
-          >
-            <FacebookIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            href="https://twitter.com/MaterialUI"
-            aria-label="X"
-            sx={{ alignSelf: 'center' }}
-          >
-            <TwitterIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            href="https://www.linkedin.com/company/mui/"
-            aria-label="LinkedIn"
-            sx={{ alignSelf: 'center' }}
-          >
-            <LinkedInIcon />
-          </IconButton>
-        </Stack>
       </Box>
     </Container>
   );

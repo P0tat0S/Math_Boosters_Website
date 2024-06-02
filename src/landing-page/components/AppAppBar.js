@@ -14,7 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ToggleColorMode from './ToggleColorMode';
 
-import Sitemark from './SitemarkIcon';
+import Sitemark from './MathBoostersIcon';
 
 function AppAppBar({ mode, toggleColorMode }) {
   const [open, setOpen] = React.useState(false);
@@ -85,22 +85,16 @@ function AppAppBar({ mode, toggleColorMode }) {
                 color="info"
                 size="small"
                 onClick={() => scrollToSection('features')}
+                sx={{ textTransform: 'none', marginRight: 2 }}
               >
-                Features
-              </Button>
-              <Button
-                variant="text"
-                color="info"
-                size="small"
-                onClick={() => scrollToSection('testimonials')}
-              >
-                Testimonials
+                Contents
               </Button>
               <Button
                 variant="text"
                 color="info"
                 size="small"
                 onClick={() => scrollToSection('highlights')}
+                sx={{ textTransform: 'none', marginRight: 2 }}
               >
                 Highlights
               </Button>
@@ -109,6 +103,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 color="info"
                 size="small"
                 onClick={() => scrollToSection('pricing')}
+                sx={{ textTransform: 'none', marginRight: 2 }}
               >
                 Pricing
               </Button>
@@ -117,7 +112,10 @@ function AppAppBar({ mode, toggleColorMode }) {
                 color="info"
                 size="small"
                 onClick={() => scrollToSection('faq')}
-                sx={{ minWidth: 0 }}
+                sx={{ minWidth: 0, 
+                      textTransform: 'none',
+                      marginRight: 2 
+                }}
               >
                 FAQ
               </Button>
@@ -131,12 +129,6 @@ function AppAppBar({ mode, toggleColorMode }) {
             }}
           >
             <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-            <Button color="primary" variant="text" size="small">
-              Sign in
-            </Button>
-            <Button color="primary" variant="contained" size="small">
-              Sign up
-            </Button>
           </Box>
           <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
             <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
@@ -163,10 +155,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 </Box>
                 <Divider sx={{ my: 3 }} />
                 <MenuItem onClick={() => scrollToSection('features')}>
-                  Features
-                </MenuItem>
-                <MenuItem onClick={() => scrollToSection('testimonials')}>
-                  Testimonials
+                  Contents
                 </MenuItem>
                 <MenuItem onClick={() => scrollToSection('highlights')}>
                   Highlights
@@ -175,16 +164,6 @@ function AppAppBar({ mode, toggleColorMode }) {
                   Pricing
                 </MenuItem>
                 <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
-                <MenuItem>
-                  <Button color="primary" variant="contained" fullWidth>
-                    Sign up
-                  </Button>
-                </MenuItem>
-                <MenuItem>
-                  <Button color="primary" variant="outlined" fullWidth>
-                    Sign in
-                  </Button>
-                </MenuItem>
               </Box>
             </Drawer>
           </Box>
