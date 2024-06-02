@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/Math_Boosters_Website/static/css/main.f855e6bc.css",
-    "main.js": "/Math_Boosters_Website/static/js/main.bac8824a.js",
+    "main.js": "/Math_Boosters_Website/static/js/main.391aa909.js",
     "static/js/453.a72e4636.chunk.js": "/Math_Boosters_Website/static/js/453.a72e4636.chunk.js",
     "static/media/feature-background-dark.jpg": "/Math_Boosters_Website/static/media/feature-background-dark.1cf19bc108e53a633509.jpg",
     "static/media/classroom.jpg": "/Math_Boosters_Website/static/media/classroom.4f46bc371a5801b5cae0.jpg",
     "static/media/feature-background-light.jpg": "/Math_Boosters_Website/static/media/feature-background-light.a8d0ef343e4af9758066.jpg",
     "index.html": "/Math_Boosters_Website/index.html",
     "main.f855e6bc.css.map": "/Math_Boosters_Website/static/css/main.f855e6bc.css.map",
-    "main.bac8824a.js.map": "/Math_Boosters_Website/static/js/main.bac8824a.js.map",
+    "main.391aa909.js.map": "/Math_Boosters_Website/static/js/main.391aa909.js.map",
     "453.a72e4636.chunk.js.map": "/Math_Boosters_Website/static/js/453.a72e4636.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.bac8824a.js"
+    "static/js/main.391aa909.js"
   ]
 }
