@@ -7,9 +7,8 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-
 import { styled } from '@mui/material/styles';
-
+import { useTheme } from '@mui/material/styles';
 import Filter1Icon from '@mui/icons-material/Filter1';
 import FunctionsIcon from '@mui/icons-material/Functions';
 import AspectRatioIcon from '@mui/icons-material/AspectRatio';
@@ -17,6 +16,8 @@ import GridOnIcon from '@mui/icons-material/GridOn';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import SchoolIcon from '@mui/icons-material/School';
+import backgroundLight from '../../images/feature-background-light.jpg';
+import backgroundDark from '../../images/feature-background-dark.jpg';
 
 const items = [
   {
@@ -79,6 +80,7 @@ const Chip = styled(MuiChip)(({ theme, selected }) => ({
 }));
 
 export default function Features() {
+  const theme = useTheme();
   const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
 
   const handleItemClick = (index) => {
@@ -88,134 +90,147 @@ export default function Features() {
   const selectedFeature = items[selectedItemIndex];
 
   return (
-    <Container id="features" sx={{ py: { xs: 8, sm: 4 } }}>
-      <Grid container spacing={6}>
-        <Grid item xs={12} md={12}>
-          <Box>
-            <Typography component="h2" variant="h4" color="text.primary" sx={{ mb: 2 }}>
-              Teaching Contents
-            </Typography>
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              sx={{ mb: { xs: 2, sm: 4 } }}
-            >
-              The teaching content of an online Maths GCSE course in the UK typically covers the national curriculum set out for Key Stage 4, targeting students in Year 10 and Year 11. The curriculum is designed to prepare students for their GCSE examinations and usually includes the following areas:
-            </Typography>
-          </Box>
-          <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>
-            {items.map(({ title }, index) => (
-              <Chip
-                key={index}
-                label={title}
-                onClick={() => handleItemClick(index)}
-                selected={selectedItemIndex === index}
-                sx={{ textTransform: 'none' }}
-              />
-            ))}
-          </Grid>
-          <Card
-            variant="outlined"
-            sx={{
-              display: { xs: 'auto', sm: 'none' },
-              mt: 4,
-            }}
-          >
-            <Box sx={{ px: 2, pb: 2 }}>
-              <Typography color="text.primary" fontWeight="medium" gutterBottom>
-                {selectedFeature.title}
+    <Container 
+      id="features" 
+      maxWidth="false"
+      sx={{ 
+        py: { xs: 8, sm: 4 },
+        backgroundImage: theme.palette.mode === 'light' 
+          ? `url(${backgroundLight})` 
+          : `url(${backgroundDark})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+       }}
+    >
+      <Container maxWidth="lg">
+        <Grid container spacing={6}>
+          <Grid item xs={12} md={12}>
+            <Box>
+              <Typography component="h2" variant="h4" color="text.primary" sx={{ mb: 2 }}>
+                Teaching Contents
               </Typography>
-              <Typography color="text.secondary" variant="body2" sx={{ mb: 1.5 }}>
-                {selectedFeature.description}
+              <Typography
+                variant="body1"
+                color="text.secondary"
+                sx={{ mb: { xs: 2, sm: 4 } }}
+              >
+                The teaching content of an online Maths GCSE course in the UK typically covers the national curriculum set out for Key Stage 4, targeting students in Year 10 and Year 11. The curriculum is designed to prepare students for their GCSE examinations and usually includes the following areas:
               </Typography>
             </Box>
-          </Card>
-          <Stack
-            direction="column"
-            justifyContent="center"
-            alignItems="flex-start"
-            spacing={2}
-            useFlexGap
-            sx={{ width: '100%', display: { xs: 'none', sm: 'flex' } }}
-          >
-            {items.map(({ icon, title, description }, index) => (
-              <Card
-                key={index}
-                component={Button}
-                onClick={() => handleItemClick(index)}
-                sx={(theme) => ({
-                  p: 3,
-                  height: 'fit-content',
-                  width: '100%',
-                  background: 'none',
-                  ...(selectedItemIndex === index && {
-                    backgroundColor: 'action.selected',
-                    borderColor:
-                      theme.palette.mode === 'light'
-                        ? 'primary.light'
-                        : 'primary.dark',
-                  }),
-                  '&:hover': {
-                    background:
-                      theme.palette.mode === 'light'
-                        ? 'linear-gradient(to bottom right, hsla(210, 100%, 97%, 0.5) 25%, hsla(210, 100%, 90%, 0.3) 100%)'
-                        : 'linear-gradient(to right bottom, hsla(210, 100%, 12%, 0.2) 25%, hsla(210, 100%, 16%, 0.2) 100%)',
-                    borderColor:
-                      theme.palette.mode === 'light'
-                        ? 'primary.light'
-                        : 'primary.dark',
-                    boxShadow:
-                      theme.palette.mode === 'light'
-                        ? '0px 2px 8px hsla(0, 0%, 0%, 0.1)'
-                        : '0px 1px 8px hsla(210, 100%, 25%, 0.5) ',
-                  },
-                })}
-              >
-                <Box
-                  sx={{
+            <Grid container item gap={1} sx={{ display: { xs: 'auto', sm: 'none' } }}>
+              {items.map(({ title }, index) => (
+                <Chip
+                  key={index}
+                  label={title}
+                  onClick={() => handleItemClick(index)}
+                  selected={selectedItemIndex === index}
+                  sx={{ textTransform: 'none' }}
+                />
+              ))}
+            </Grid>
+            <Card
+              variant="outlined"
+              sx={{
+                display: { xs: 'auto', sm: 'none' },
+                mt: 4,
+              }}
+            >
+              <Box sx={{ px: 2, pb: 2 }}>
+                <Typography color="text.primary" fontWeight="medium" gutterBottom>
+                  {selectedFeature.title}
+                </Typography>
+                <Typography color="text.secondary" variant="body2" sx={{ mb: 1.5 }}>
+                  {selectedFeature.description}
+                </Typography>
+              </Box>
+            </Card>
+            <Stack
+              direction="column"
+              justifyContent="center"
+              alignItems="flex-start"
+              spacing={2}
+              useFlexGap
+              sx={{ width: '100%', display: { xs: 'none', sm: 'flex' } }}
+            >
+              {items.map(({ icon, title, description }, index) => (
+                <Card
+                  key={index}
+                  component={Button}
+                  onClick={() => handleItemClick(index)}
+                  sx={(theme) => ({
+                    p: 3,
+                    height: 'fit-content',
                     width: '100%',
-                    display: 'flex',
-                    textAlign: 'left',
-                    flexDirection: { xs: 'column', md: 'row' },
-                    alignItems: { md: 'center' },
-                    gap: 2.5,
-                  }}
+                    background: 'none',
+                    ...(selectedItemIndex === index && {
+                      backgroundColor: 'action.selected',
+                      borderColor:
+                        theme.palette.mode === 'light'
+                          ? 'primary.light'
+                          : 'primary.dark',
+                    }),
+                    '&:hover': {
+                      background:
+                        theme.palette.mode === 'light'
+                          ? 'linear-gradient(to bottom right, hsla(210, 100%, 97%, 0.5) 25%, hsla(210, 100%, 90%, 0.3) 100%)'
+                          : 'linear-gradient(to right bottom, hsla(210, 100%, 12%, 0.2) 25%, hsla(210, 100%, 16%, 0.2) 100%)',
+                      borderColor:
+                        theme.palette.mode === 'light'
+                          ? 'primary.light'
+                          : 'primary.dark',
+                      boxShadow:
+                        theme.palette.mode === 'light'
+                          ? '0px 2px 8px hsla(0, 0%, 0%, 0.1)'
+                          : '0px 1px 8px hsla(210, 100%, 25%, 0.5) ',
+                    },
+                  })}
                 >
                   <Box
-                    sx={(theme) => ({
-                      color:
-                        theme.palette.mode === 'light' ? 'grey.400' : 'grey.600',
-                      ...(selectedItemIndex === index && {
-                        color: 'primary.main',
-                      }),
-                    })}
+                    sx={{
+                      width: '100%',
+                      display: 'flex',
+                      textAlign: 'left',
+                      flexDirection: { xs: 'column', md: 'row' },
+                      alignItems: { md: 'center' },
+                      gap: 2.5,
+                    }}
                   >
-                    {icon}
+                    <Box
+                      sx={(theme) => ({
+                        color:
+                          theme.palette.mode === 'light' ? 'grey.400' : 'grey.600',
+                        ...(selectedItemIndex === index && {
+                          color: 'primary.main',
+                        }),
+                      })}
+                    >
+                      {icon}
+                    </Box>
+                    <div>
+                      <Typography
+                        color="text.primary"
+                        fontWeight="medium"
+                        gutterBottom
+                      >
+                        {title}
+                      </Typography>
+                      <Typography
+                        color="text.secondary"
+                        variant="body2"
+                        sx={{ mb: 1.5,
+                              textTransform: 'none'
+                        }}
+                      >
+                        {description}
+                      </Typography>
+                    </div>
                   </Box>
-                  <div>
-                    <Typography
-                      color="text.primary"
-                      fontWeight="medium"
-                      gutterBottom
-                    >
-                      {title}
-                    </Typography>
-                    <Typography
-                      color="text.secondary"
-                      variant="body2"
-                      sx={{ mb: 1.5,
-                            textTransform: 'none'
-                      }}
-                    >
-                      {description}
-                    </Typography>
-                  </div>
-                </Box>
-              </Card>
-            ))}
-          </Stack>
+                </Card>
+              ))}
+            </Stack>
+          </Grid>
         </Grid>
-      </Grid>
+      </Container>
     </Container>
   );
 }
