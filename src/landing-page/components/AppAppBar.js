@@ -14,7 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ToggleColorMode from './ToggleColorMode';
 
-import Sitemark from './MathBoostersIcon';
+import MathBoostersIcon from './MathBoostersIcon';
 
 function AppAppBar({ mode, toggleColorMode }) {
   const [open, setOpen] = React.useState(false);
@@ -78,12 +78,21 @@ function AppAppBar({ mode, toggleColorMode }) {
               px: 0,
             }}
           >
-            <Sitemark />
+            <MathBoostersIcon />
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
               <Button
                 variant="text"
                 color="info"
-                size="small"
+                size="medium"
+                onClick={() => scrollToSection('hero')}
+                sx={{ textTransform: 'none', marginRight: 2 }}
+              >
+                Math Boosters LTD
+              </Button>
+              <Button
+                variant="text"
+                color="info"
+                size="Big"
                 onClick={() => scrollToSection('features')}
                 sx={{ textTransform: 'none', marginRight: 2 }}
               >
@@ -92,7 +101,7 @@ function AppAppBar({ mode, toggleColorMode }) {
               <Button
                 variant="text"
                 color="info"
-                size="small"
+                size="medium"
                 onClick={() => scrollToSection('highlights')}
                 sx={{ textTransform: 'none', marginRight: 2 }}
               >
@@ -101,7 +110,7 @@ function AppAppBar({ mode, toggleColorMode }) {
               <Button
                 variant="text"
                 color="info"
-                size="small"
+                size="medium"
                 onClick={() => scrollToSection('pricing')}
                 sx={{ textTransform: 'none', marginRight: 2 }}
               >
@@ -110,7 +119,7 @@ function AppAppBar({ mode, toggleColorMode }) {
               <Button
                 variant="text"
                 color="info"
-                size="small"
+                size="medium"
                 onClick={() => scrollToSection('faq')}
                 sx={{ minWidth: 0, 
                       textTransform: 'none',
