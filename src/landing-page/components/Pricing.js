@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import ContactUs from './ContactUs';
 
 const tiers = [
   {
@@ -22,7 +23,7 @@ const tiers = [
       'One hour session',
       'Flexible schedule',
     ],
-    buttonText: 'Book now',
+    buttonText: 'Contact us',
     buttonVariant: 'outlined',
   },
   {
@@ -36,7 +37,7 @@ const tiers = [
       'Or Wednesday and Thursday 5:00-6:pm',
       'Or Saturdays 3pm-5pm',
     ],
-    buttonText: 'Start now',
+    buttonText: 'Contact us',
     buttonVariant: 'contained',
   },
   {
@@ -188,9 +189,7 @@ export default function Pricing() {
                 ))}
               </CardContent>
               <CardActions>
-                <Button fullWidth variant={tier.buttonVariant}>
-                  {tier.buttonText}
-                </Button>
+                < ContactUs />
               </CardActions>
             </Card>
           </Grid>
