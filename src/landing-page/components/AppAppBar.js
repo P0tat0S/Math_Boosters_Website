@@ -87,7 +87,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 onClick={() => scrollToSection('hero')}
                 sx={{ textTransform: 'none', marginRight: 2 }}
               >
-                Math Boosters LTD
+                Maths Booster Ltd
               </Button>
               <Button
                 variant="text"

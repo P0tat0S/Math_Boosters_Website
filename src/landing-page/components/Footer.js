@@ -10,7 +10,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
       {'Copyright © '}
-      <Link href="https://math-boosters.com/">Math Boosters&nbsp;</Link>
+      <Link href="https://math-boosters.com/">Maths Booster&nbsp;</Link>
       {new Date().getFullYear()}
     </Typography>
   );
@@ -39,7 +39,7 @@ export default function Footer() {
         <Box display="flex" alignItems="center">
           <MathBoostersIcon />
           <Typography variant="h6" component="div">
-            Math Boosters Ltd
+            Maths Booster Ltd
           </Typography>
         </Box>
         
