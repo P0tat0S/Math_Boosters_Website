@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.f855e6bc.css",
-    "main.js": "/static/js/main.b2639a10.js",
+    "main.js": "/static/js/main.9708c472.js",
     "static/js/453.a72e4636.chunk.js": "/static/js/453.a72e4636.chunk.js",
     "static/media/feature-background-dark.jpg": "/static/media/feature-background-dark.1cf19bc108e53a633509.jpg",
     "static/media/classroom.jpg": "/static/media/classroom.4f46bc371a5801b5cae0.jpg",
@@ -9,11 +9,11 @@
     "static/media/math-boosters-icon.png": "/static/media/math-boosters-icon.45c5d3440141f0275739.png",
     "index.html": "/index.html",
     "main.f855e6bc.css.map": "/static/css/main.f855e6bc.css.map",
-    "main.b2639a10.js.map": "/static/js/main.b2639a10.js.map",
+    "main.9708c472.js.map": "/static/js/main.9708c472.js.map",
     "453.a72e4636.chunk.js.map": "/static/js/453.a72e4636.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.b2639a10.js"
+    "static/js/main.9708c472.js"
   ]
 }
