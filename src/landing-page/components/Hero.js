@@ -3,8 +3,11 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import classroom from '../../images/classroom.jpg';
 import { styled } from '@mui/material/styles';
+import ContactUs from './ContactUs';
 
 const StyledBox = styled('div')(({ theme }) => ({
   alignSelf: 'center',
@@ -88,11 +91,41 @@ export default function Hero() {
           >
             Unlock your potential with our Online Math course, designed to boost GCSE scores. Enhance your skills with high-quality resources and expert guidance, ensuring top-tier results and academic success.
           </Typography>
+          
+          {/* CTA Button */}
+          <Box sx={{ mt: 2 }}>
+            <ContactUs />
+          </Box>
         </Stack>
+
+        <Card
+          sx={{
+            mt: 4,
+            mb: 4,
+            width: { xs: '100%', sm: '80%' },
+            backgroundColor: (theme) =>
+              theme.palette.mode === 'light'
+                ? 'primary.light'
+                : 'primary.dark',
+            color: 'white',
+            textAlign: 'center',
+            boxShadow: 3,
+          }}
+        >
+          <CardContent>
+            <Typography variant="h5" component="div" gutterBottom>
+              Free 30-Minute Online Lesson & Consultation
+            </Typography>
+            <Typography variant="body1">
+              Book your free trial session today and experience our teaching methods firsthand
+            </Typography>
+          </CardContent>
+        </Card>
+
         <StyledBox 
           id="image"
           sx={{
-            backgroundImage: `url(${classroom})`, // replace YourImageUrl with your image URL
+            backgroundImage: `url(${classroom})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
           }}
