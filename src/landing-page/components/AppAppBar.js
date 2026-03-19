@@ -117,6 +117,26 @@ function AppAppBar({ mode, toggleColorMode }) {
               >
                 FAQ
               </Button>
+              <Button
+                component={RouterLink}
+                to="/testimonials"
+                variant="text"
+                color="info"
+                size="medium"
+                sx={{ textTransform: 'none', marginRight: 2 }}
+              >
+                Testimonials
+              </Button>
+              <Button
+                component={RouterLink}
+                to="/contact"
+                variant="contained"
+                color="primary"
+                size="small"
+                sx={{ textTransform: 'none' }}
+              >
+                Contact
+              </Button>
             </Box>
           </Box>
           <Box
@@ -162,6 +182,8 @@ function AppAppBar({ mode, toggleColorMode }) {
                   Pricing
                 </MenuItem>
                 <MenuItem component={RouterLink} to="/faq" onClick={toggleDrawer(false)}>FAQ</MenuItem>
+                <MenuItem component={RouterLink} to="/testimonials" onClick={toggleDrawer(false)}>Testimonials</MenuItem>
+                <MenuItem component={RouterLink} to="/contact" onClick={toggleDrawer(false)}>Contact</MenuItem>
               </Box>
             </Drawer>
           </Box>

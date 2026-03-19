@@ -1,19 +1,11 @@
-import React from 'react';
 import { Container, Typography, Box, CssBaseline, Card, CardContent, Grid } from '@mui/material';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import PropTypes from 'prop-types';
 import AppAppBar from '../landing-page/components/AppAppBar';
 import Footer from '../landing-page/components/Footer';
 
-export default function AboutUs() {
-  const [mode, setMode] = React.useState('light');
-  const defaultTheme = createTheme({ palette: { mode } });
-
-  const toggleColorMode = () => {
-    setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  };
-
+function AboutUs({ mode, toggleColorMode }) {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <>
       <CssBaseline />
       <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
       <Container maxWidth="md" sx={{ py: 8 }}>
@@ -116,6 +108,13 @@ export default function AboutUs() {
         </Box>
       </Container>
       <Footer />
-    </ThemeProvider>
+    </>
   );
 }
+
+AboutUs.propTypes = {
+  mode: PropTypes.oneOf(['dark', 'light']).isRequired,
+  toggleColorMode: PropTypes.func.isRequired,
+};
+
+export default AboutUs;

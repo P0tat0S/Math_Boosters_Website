@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -7,7 +9,6 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import classroom from '../../images/classroom.jpg';
 import { styled } from '@mui/material/styles';
-import ContactUs from './ContactUs';
 
 const StyledBox = styled('div')(({ theme }) => ({
   alignSelf: 'center',
@@ -92,7 +93,34 @@ export default function Hero() {
             Unlock your potential with our Online Math course, designed to boost GCSE scores. Enhance your skills with high-quality resources and expert guidance, ensuring top-tier results and academic success.
           </Typography>
           <Box sx={{ mt: 2 }}>
-            <ContactUs />
+            <Button
+              component={RouterLink}
+              to="/contact"
+              variant="contained"
+              color="primary"
+              size="large"
+              sx={{
+                px: 4,
+                py: 1.5,
+                fontSize: '1.1rem',
+                borderRadius: '8px',
+                textTransform: 'none',
+                boxShadow: (theme) =>
+                  theme.palette.mode === 'light'
+                    ? '0 4px 12px hsla(210, 98%, 42%, 0.2)'
+                    : '0 4px 12px hsla(210, 100%, 25%, 0.3)',
+                '&:hover': {
+                  transform: 'translateY(-2px)',
+                  boxShadow: (theme) =>
+                    theme.palette.mode === 'light'
+                      ? '0 6px 16px hsla(210, 98%, 42%, 0.3)'
+                      : '0 6px 16px hsla(210, 100%, 25%, 0.4)',
+                },
+                transition: 'all 0.2s ease-in-out',
+              }}
+            >
+              Contact Us
+            </Button>
           </Box>
         </Stack>
 

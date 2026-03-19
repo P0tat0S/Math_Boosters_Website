@@ -3,16 +3,16 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import PropTypes from 'prop-types';
 import AppAppBar from '../landing-page/components/AppAppBar';
-import FAQComponent from '../landing-page/components/FAQ';
+import TestimonialsSection from '../landing-page/components/Testimonials';
 import Footer from '../landing-page/components/Footer';
 
-function FAQ({ mode, toggleColorMode }) {
+function Testimonials({ mode, toggleColorMode }) {
   return (
     <>
       <CssBaseline />
       <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
       <Box sx={{ bgcolor: 'background.default' }}>
-        <FAQComponent />
+        <TestimonialsSection />
         <Divider />
         <Footer />
       </Box>
@@ -20,9 +20,9 @@ function FAQ({ mode, toggleColorMode }) {
   );
 }
 
-FAQ.propTypes = {
+Testimonials.propTypes = {
   mode: PropTypes.oneOf(['dark', 'light']).isRequired,
   toggleColorMode: PropTypes.func.isRequired,
 };
 
-export default FAQ;
+export default Testimonials;

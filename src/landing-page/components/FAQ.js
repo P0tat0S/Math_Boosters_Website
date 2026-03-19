@@ -22,7 +22,7 @@ export default function FAQ() {
       id="faq"
       maxWidth="false"
       sx={{
-        pt: { xs: 4, sm: 12 },
+        pt: { xs: 28, sm: 20 },
         pb: { xs: 8, sm: 16 },
         position: 'relative',
         display: 'flex',

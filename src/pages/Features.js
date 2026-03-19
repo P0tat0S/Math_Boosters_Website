@@ -1,22 +1,14 @@
-import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import PropTypes from 'prop-types';
 import AppAppBar from '../landing-page/components/AppAppBar';
 import FeaturesSection from '../landing-page/components/Features';
 import Footer from '../landing-page/components/Footer';
 
-export default function Features() {
-  const [mode, setMode] = React.useState('light');
-  const defaultTheme = createTheme({ palette: { mode } });
-
-  const toggleColorMode = () => {
-    setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  };
-
+function Features({ mode, toggleColorMode }) {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <>
       <CssBaseline />
       <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
       <Box sx={{ bgcolor: 'background.default' }}>
@@ -24,6 +16,13 @@ export default function Features() {
         <Divider />
         <Footer />
       </Box>
-    </ThemeProvider>
+    </>
   );
 }
+
+Features.propTypes = {
+  mode: PropTypes.oneOf(['dark', 'light']).isRequired,
+  toggleColorMode: PropTypes.func.isRequired,
+};
+
+export default Features;

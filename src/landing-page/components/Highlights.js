@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -56,7 +58,7 @@ export default function Highlights() {
     <Box
       id="highlights"
       sx={{
-        pt: { xs: 4, sm: 12 },
+        pt: { xs: 28, sm: 20 },
         pb: { xs: 8, sm: 16 },
         color: 'white',
         bgcolor: 'hsl(220, 30%, 2%)',
@@ -118,6 +120,18 @@ export default function Highlights() {
             </Grid>
           ))}
         </Grid>
+        <Box sx={{ mt: 6, textAlign: 'center' }}>
+          <Button
+            component={RouterLink}
+            to="/contact"
+            variant="contained"
+            color="primary"
+            size="large"
+            sx={{ textTransform: 'none' }}
+          >
+            Book a Free Trial
+          </Button>
+        </Box>
       </Container>
     </Box>
   );

@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
-import ContactUs from './ContactUs';
+import { Link as RouterLink } from 'react-router-dom';
 
 const tiers = [
   {
@@ -59,7 +59,7 @@ export default function Pricing() {
     <Container
       id="pricing"
       sx={{
-        pt: { xs: 4, sm: 12 },
+        pt: { xs: 28, sm: 20 },
         pb: { xs: 8, sm: 16 },
         position: 'relative',
         display: 'flex',
@@ -93,7 +93,7 @@ export default function Pricing() {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 4,
-                ...(tier.title === 'Professional' && {
+                ...(tier.title === '12 Week Program' && {
                   border: 'none',
                   boxShadow:
                     theme.palette.mode === 'light'
@@ -112,13 +112,13 @@ export default function Pricing() {
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     gap: 2,
-                    color: tier.title === 'Professional' ? 'grey.100' : '',
+                    color: tier.title === '12 Week Program' ? 'grey.100' : '',
                   }}
                 >
                   <Typography component="h3" variant="h6">
                     {tier.title}
                   </Typography>
-                  {tier.title === 'Professional' && (
+                  {tier.title === '12 Week Program' && (
                     <Chip
                       icon={<AutoAwesomeIcon />}
                       label={tier.subheader}
@@ -140,7 +140,7 @@ export default function Pricing() {
                   sx={{
                     display: 'flex',
                     alignItems: 'baseline',
-                    color: tier.title === 'Professional' ? 'grey.50' : undefined,
+                    color: tier.title === '12 Week Program' ? 'grey.50' : undefined,
                   }}
                 >
                   <Typography component="h3" variant="h2">
@@ -171,7 +171,7 @@ export default function Pricing() {
                       sx={{
                         width: 20,
                         color:
-                          tier.title === 'Professional'
+                          tier.title === '12 Week Program'
                             ? 'primary.light'
                             : 'primary.main',
                       }}
@@ -180,7 +180,7 @@ export default function Pricing() {
                       variant="subtitle2"
                       component={'span'}
                       sx={{
-                        color: tier.title === 'Professional' ? 'grey.50' : undefined,
+                        color: tier.title === '12 Week Program' ? 'grey.50' : undefined,
                       }}
                     >
                       {line}
@@ -189,7 +189,14 @@ export default function Pricing() {
                 ))}
               </CardContent>
               <CardActions>
-                < ContactUs />
+                <Button
+                  component={RouterLink}
+                  to="/contact"
+                  variant={tier.buttonVariant}
+                  fullWidth
+                >
+                  {tier.buttonText}
+                </Button>
               </CardActions>
             </Card>
           </Grid>

@@ -55,10 +55,10 @@ export default function Footer() {
           <Typography variant="body2" fontWeight="medium">
             Overview
           </Typography>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link component={RouterLink} to="/pricing" color="text.secondary" variant="body2">
             Pricing
           </Link>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link component={RouterLink} to="/faq" color="text.secondary" variant="body2">
             FAQs
           </Link>
         </Box>
@@ -75,7 +75,7 @@ export default function Footer() {
           <Link component={RouterLink} to="/about" color="text.secondary" variant="body2">
             About us
           </Link>
-          <Link color="text.secondary" variant="body2" href="mailto:bcnwilliam@yahoo.com">
+          <Link component={RouterLink} to="/contact" color="text.secondary" variant="body2">
             Contact
           </Link>
         </Box>
