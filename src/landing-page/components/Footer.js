@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
+import { Link as RouterLink } from 'react-router-dom';
 
 import MathBoostersIcon from './MathBoostersIcon';
 
@@ -71,10 +72,10 @@ export default function Footer() {
           <Typography variant="body2" fontWeight="medium">
             Company
           </Typography>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link component={RouterLink} to="/about" color="text.secondary" variant="body2">
             About us
           </Link>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link color="text.secondary" variant="body2" href="mailto:bcnwilliam@yahoo.com">
             Contact
           </Link>
         </Box>
@@ -88,10 +89,10 @@ export default function Footer() {
           <Typography variant="body2" fontWeight="medium">
             Legal
           </Typography>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link component={RouterLink} to="/terms" color="text.secondary" variant="body2">
             Terms
           </Link>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link component={RouterLink} to="/privacy" color="text.secondary" variant="body2">
             Privacy
           </Link>
         </Box>
@@ -107,13 +108,13 @@ export default function Footer() {
         }}
       >
         <div>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link component={RouterLink} to="/privacy" color="text.secondary" variant="body2">
             Privacy Policy
           </Link>
           <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
             &nbsp;•&nbsp;
           </Typography>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link component={RouterLink} to="/terms" color="text.secondary" variant="body2">
             Terms of Service
           </Link>
           <Copyright />

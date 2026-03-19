@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import { Link as RouterLink } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
@@ -21,20 +22,6 @@ function AppAppBar({ mode, toggleColorMode }) {
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
-  };
-
-  const scrollToSection = (sectionId) => {
-    const sectionElement = document.getElementById(sectionId);
-    const offset = 128;
-    if (sectionElement) {
-      const targetScroll = sectionElement.offsetTop - offset;
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
-      window.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth',
-      });
-      setOpen(false);
-    }
   };
 
   return (
@@ -81,46 +68,51 @@ function AppAppBar({ mode, toggleColorMode }) {
             <MathBoostersIcon />
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
               <Button
+                component={RouterLink}
+                to="/"
                 variant="text"
                 color="info"
                 size="medium"
-                onClick={() => scrollToSection('hero')}
                 sx={{ textTransform: 'none', marginRight: 2 }}
               >
                 Maths Booster
               </Button>
               <Button
+                component={RouterLink}
+                to="/features"
                 variant="text"
                 color="info"
                 size="medium"
-                onClick={() => scrollToSection('features')}
                 sx={{ textTransform: 'none', marginRight: 2 }}
               >
                 Contents
               </Button>
               <Button
+                component={RouterLink}
+                to="/highlights"
                 variant="text"
                 color="info"
                 size="medium"
-                onClick={() => scrollToSection('highlights')}
                 sx={{ textTransform: 'none', marginRight: 2 }}
               >
                 Highlights
               </Button>
               <Button
+                component={RouterLink}
+                to="/pricing"
                 variant="text"
                 color="info"
                 size="medium"
-                onClick={() => scrollToSection('pricing')}
                 sx={{ textTransform: 'none', marginRight: 2 }}
               >
                 Pricing
               </Button>
               <Button
+                component={RouterLink}
+                to="/faq"
                 variant="text"
                 color="info"
                 size="medium"
-                onClick={() => scrollToSection('faq')}
                 sx={{ minWidth: 0, textTransform: 'none', marginRight: 2 }}
               >
                 FAQ
@@ -160,16 +152,16 @@ function AppAppBar({ mode, toggleColorMode }) {
                   </IconButton>
                 </Box>
                 <Divider sx={{ my: 3 }} />
-                <MenuItem onClick={() => scrollToSection('features')}>
+                <MenuItem component={RouterLink} to="/features" onClick={toggleDrawer(false)}>
                   Contents
                 </MenuItem>
-                <MenuItem onClick={() => scrollToSection('highlights')}>
+                <MenuItem component={RouterLink} to="/highlights" onClick={toggleDrawer(false)}>
                   Highlights
                 </MenuItem>
-                <MenuItem onClick={() => scrollToSection('pricing')}>
+                <MenuItem component={RouterLink} to="/pricing" onClick={toggleDrawer(false)}>
                   Pricing
                 </MenuItem>
-                <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
+                <MenuItem component={RouterLink} to="/faq" onClick={toggleDrawer(false)}>FAQ</MenuItem>
               </Box>
             </Drawer>
           </Box>
