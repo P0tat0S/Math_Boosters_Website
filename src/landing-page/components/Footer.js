@@ -11,7 +11,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
       {'Copyright © '}
-      <Link href="https://math-boosters.com/">Maths Booster&nbsp;</Link>
+      <Link href="https://maths-booster.co.uk/">Maths Booster&nbsp;</Link>
       {new Date().getFullYear()}
     </Typography>
   );
