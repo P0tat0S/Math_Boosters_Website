@@ -39,7 +39,7 @@ export default function Footer() {
         <Box display="flex" alignItems="center">
           <MathBoostersIcon />
           <Typography variant="h6" component="div">
-            Maths Booster Ltd
+            Maths Booster
           </Typography>
         </Box>
         

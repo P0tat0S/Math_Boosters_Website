@@ -217,9 +217,7 @@ export default function Features() {
                       <Typography
                         color="text.secondary"
                         variant="body2"
-                        sx={{ mb: 1.5,
-                              textTransform: 'none'
-                        }}
+                        sx={{ mb: 1.5, textTransform: 'none' }}
                       >
                         {description}
                       </Typography>

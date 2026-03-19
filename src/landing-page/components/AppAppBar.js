@@ -87,12 +87,12 @@ function AppAppBar({ mode, toggleColorMode }) {
                 onClick={() => scrollToSection('hero')}
                 sx={{ textTransform: 'none', marginRight: 2 }}
               >
-                Maths Booster Ltd
+                Maths Booster
               </Button>
               <Button
                 variant="text"
                 color="info"
-                size="Big"
+                size="medium"
                 onClick={() => scrollToSection('features')}
                 sx={{ textTransform: 'none', marginRight: 2 }}
               >
@@ -121,10 +121,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 color="info"
                 size="medium"
                 onClick={() => scrollToSection('faq')}
-                sx={{ minWidth: 0, 
-                      textTransform: 'none',
-                      marginRight: 2 
-                }}
+                sx={{ minWidth: 0, textTransform: 'none', marginRight: 2 }}
               >
                 FAQ
               </Button>

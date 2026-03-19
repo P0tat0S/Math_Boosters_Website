@@ -91,8 +91,6 @@ export default function Hero() {
           >
             Unlock your potential with our Online Math course, designed to boost GCSE scores. Enhance your skills with high-quality resources and expert guidance, ensuring top-tier results and academic success.
           </Typography>
-          
-          {/* CTA Button */}
           <Box sx={{ mt: 2 }}>
             <ContactUs />
           </Box>

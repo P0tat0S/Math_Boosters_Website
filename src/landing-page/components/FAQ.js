@@ -18,10 +18,10 @@ export default function FAQ() {
   };
 
   return (
-    <Container 
-      id="faq" 
+    <Container
+      id="faq"
       maxWidth="false"
-      sx={{ 
+      sx={{
         pt: { xs: 4, sm: 12 },
         pb: { xs: 8, sm: 16 },
         position: 'relative',
@@ -29,9 +29,7 @@ export default function FAQ() {
         flexDirection: 'column',
         alignItems: 'center',
         gap: { xs: 3, sm: 6 },
-        backgroundColor: theme.palette.mode === 'light' 
-          ? 'lightblue' 
-          : '#0D2448',
+        backgroundColor: theme.palette.mode === 'light' ? 'hsla(210, 100%, 88%, 0.4)' : 'hsla(210, 100%, 16%, 0.4)',
       }}
     >
       <Container maxWidth="md">
